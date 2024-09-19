@@ -23,7 +23,7 @@ public class VerificadorDeOrden {
         if (opcion<0 || opcion>1){
             throw new Error("Las opciones disponibles son 0 y 1");
         }
-        for(int i=1; i<enteros.length-1; i++){
+        for(int i=1; i<enteros.length; i++){
             if((opcion == 0) && (enteros[i-1]>enteros[i])){
                 return false;
             } else if((opcion == 1) && (enteros[i-1]<enteros[i])){
