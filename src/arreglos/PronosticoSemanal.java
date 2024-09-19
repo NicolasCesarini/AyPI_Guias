@@ -87,11 +87,10 @@ public class PronosticoSemanal {
                 diasTemperaturasMaximasProvisorio[contadorTemperaturasIguales]=i+1;
                 contadorTemperaturasIguales += 1;
             }
-
         }
         int[] diasTemperaturasMaximas = new int[contadorTemperaturasIguales];
         for(int i=0; i<diasTemperaturasMaximas.length; i++){
-            diasTemperaturasMaximas[i] = diasTemperaturasMaximas[i];
+            diasTemperaturasMaximas[i] = diasTemperaturasMaximasProvisorio[i];
         }
         return diasTemperaturasMaximas;
     }
