@@ -7,7 +7,6 @@ package arreglos;
     Almacene las muestras de humedad.
     Calcule la humedad promedio.
     Busque el mínimo y máximo valor de humedad.
-
  */
 
 public class HistorialDeHumedad {

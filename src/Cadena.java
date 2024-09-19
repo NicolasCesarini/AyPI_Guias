@@ -59,7 +59,9 @@ public class Cadena {
         
     }
 
-    public boolean contine(char a){
+    //public transformar
+
+    public boolean contiene(char a){
         for (int i = 0; i < this.longitud(); i++) {
             if(this.cadena[i]== a){
                 return true;
@@ -77,7 +79,7 @@ public class Cadena {
         Cadena vocales = new Cadena("aeiouAEIOU");
         int longitudNuevaCadena = 0;
         for (int i = 0; i < this.longitud(); i++){
-            if (!vocales.contine(this.cadena[i])){
+            if (!vocales.contiene(this.cadena[i])){
                 longitudNuevaCadena ++;
             }
         }
@@ -85,7 +87,7 @@ public class Cadena {
 
         int nuevaCadenaIndice = 0;
         for (int i = 0; i < this.longitud(); i++){
-            if (!vocales.contine(this.cadena[i])){
+            if (!vocales.contiene(this.cadena[i])){
                 nuevaCadena[nuevaCadenaIndice]= this.cadena[i];
                 nuevaCadenaIndice++;
             }
@@ -94,6 +96,44 @@ public class Cadena {
     
     }
 
+    /*
+     * Implementar el método frecuencias():void que recibe como parámetro 
+     * una cadena de tipo String sin signos de puntuación,  e informe por 
+     * pantalla la frecuencia de aparición de cada una de las letras de la cadena. 
+     */
+    public void frecuencias(){
+        int[] letrasABC = new int[26];
+        for(int i=0; i<this.longitud();i++){
+            letrasABC[(int) this.cadena[i] - (int) 'a'] += 1;
+        }
+        for(int i=0; i<letrasABC.length;i++){
+            System.out.println("\n" + (char) (97+i) + ": " + letrasABC[i]);
+        }
+
+        System.out.println(letrasABC.toString());
+    }
+
+    public Cadena invertir() {
+        char aux;
+        for (int i = 0; i < this.longitud()/2; i++) {
+            aux = this.cadena[i];
+            this.cadena[i] = this.cadena[this.longitud() - 1 - i];
+            this.cadena[this.longitud() - 1 - i] = aux;
+        }
+        return new Cadena(this.cadena);
+    }
+
+    public static void main(String[] args) {
+        Cadena cad1 = new Cadena("holacomoestastodobiensstpeamcopln");
+
+        cad1.frecuencias();
+        System.out.println((int) 'B');
+
+
+    
+    }
+
+    
 
 }
   
